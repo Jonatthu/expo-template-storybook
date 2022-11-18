@@ -1,5 +1,9 @@
+import { Canvas, Fill } from "@shopify/react-native-skia";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+
 import React from "react";
-import { TouchableOpacity, Text, StyleSheet } from "react-native";
+import { version } from 'canvaskit-wasm/package.json';
+
 interface MyButtonProps {
   onPress: () => void;
   text: string;
@@ -7,9 +11,16 @@ interface MyButtonProps {
 
 export const MyButton = ({ onPress, text }: MyButtonProps) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
-      <Text style={styles.text}>{text}</Text>
-    </TouchableOpacity>
+    <View>
+
+      <TouchableOpacity style={styles.container} onPress={onPress}>
+        <Text style={styles.text}>{text}</Text>
+      </TouchableOpacity>
+      <Canvas style={{ height: 200 }}>
+        <Fill color="black" />
+      </Canvas>
+    </View>
+
   );
 };
 
@@ -21,3 +32,5 @@ const styles = StyleSheet.create({
   },
   text: { color: "black" },
 });
+
+export default MyButton;
