@@ -16,12 +16,16 @@ module.exports = {
 
     config = {
       ...config,
+      node: {
+        ...config.node,
+        fs: 'empty'
+      },
       plugins: [
         ...config.plugins,
         new CopyPlugin({
           patterns: [
             {
-              from: '../node_modules/canvaskit-wasm/bin/full/canvaskit.wasm',
+              from: './node_modules/canvaskit-wasm/bin/full/canvaskit.wasm',
             },
           ],
         }),

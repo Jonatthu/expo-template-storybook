@@ -29,11 +29,12 @@ export const Basic: MyButtonStory = (args) => {
 };
 
 export const BasicSimple: MyButtonStory = (args) => {
-  return <View>
-    <WithSkiaWeb
-    opts={{ locateFile: (file: string) => `https://cdn.jsdelivr.net/npm/canvaskit-wasm@${version}/bin/full/${file}` }}
-      fallback={<Text>Loading Skia...</Text>}
-      getComponent={() => import('./Button')}
-    />
-  </View>
+  return (
+    <View>
+      <WithSkiaWeb
+        fallback={<Text>Loading Skia...</Text>}
+        getComponent={() => import('./Button')}
+      />
+    </View>
+  );
 }
