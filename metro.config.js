@@ -1,4 +1,5 @@
 const { getDefaultConfig } = require("expo/metro-config");
+const withNativewind = require('nativewind/metro');
 
 const defaultConfig = getDefaultConfig(__dirname);
 
@@ -16,4 +17,4 @@ defaultConfig.transformer.getTransformOptions = async () => ({
 
 defaultConfig.watchFolders = [...defaultConfig.watchFolders, "./.ondevice"];
 
-module.exports = defaultConfig;
+module.exports = withNativewind(defaultConfig);
