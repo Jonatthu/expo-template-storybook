@@ -17,20 +17,40 @@ const DecimalsButtons = [
 
 export default function App() {
     return (
-        <View className='pt-28 bg-purple-300 flex-1'>
+        <View className='pt-28 flex-1'>
             <Text className='text-base'>Hello</Text>
             <Text className='text-lg'>Hello</Text>
             <Text className='text-xl'>Hello</Text>
             {/* This class 9xl is broken for example */}
             <Text className='text-8xl'>Hello</Text>
             <Text className='text-9xl'>Hello</Text>
-            <View className="flex-col mb-4 gap-2">
+            <View className="flex-1 bg-green-100 p-2">
+                <View className="flex-1 mb-4 gap-2">
+                    {DecimalsButtons.map((row, index) => (
+                        <View className="flex-1 flex-row gap-2" key={index}>
+                            {row.map((button) => (
+                                <Button
+                                    key={button}
+                                    className="h-16 flex-1 items-center justify-center"
+                                >
+                                    <Text>{button}</Text>
+                                </Button>
+                            ))}
+                        </View>
+                    ))}
+                </View>
+            </View>
+
+            {/* Normal implementation */}
+            <View style={{ flexDirection: 'column', marginBottom: 16 }}>
                 {DecimalsButtons.map((row, index) => (
-                    <View className="flex-row gap-2" key={index}>
+                    <View style={{ flex: 1, flexDirection: 'row', backgroundColor: 'red' }} key={index}>
                         {row.map((button) => (
-                            <Button key={button} className="h-16 flex-1 justify-center items-center bg-green-100 ">
-                                <Text className='text-center'>{button}</Text>
-                            </Button>
+                            <View key={button} style={{ flex: 1 }}>
+                                <Button style={{ height: 64, backgroundColor: 'green' }}>
+                                    <Text className='text-center'>{button}</Text>
+                                </Button>
+                            </View>
                         ))}
                     </View>
                 ))}
