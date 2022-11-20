@@ -21,6 +21,8 @@ export default function App() {
             <Text className='text-base'>Hello</Text>
             <Text className='text-lg'>Hello</Text>
             <Text className='text-xl'>Hello</Text>
+            {/* This class 9xl is broken for example */}
+            <Text className='text-8xl'>Hello</Text>
             <Text className='text-9xl'>Hello</Text>
             <View className="bg-green-100 mb-4 gap-2">
                 {DecimalsButtons.map((row, index) => (
