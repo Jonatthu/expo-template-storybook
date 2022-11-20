@@ -40,21 +40,6 @@ export default function App() {
                     ))}
                 </View>
             </View>
-
-            {/* Normal implementation */}
-            <View style={{ flexDirection: 'column', marginBottom: 16 }}>
-                {DecimalsButtons.map((row, index) => (
-                    <View style={{ flex: 1, flexDirection: 'row', backgroundColor: 'red' }} key={index}>
-                        {row.map((button) => (
-                            <View key={button} style={{ flex: 1 }}>
-                                <Button style={{ height: 64, backgroundColor: 'green' }}>
-                                    <Text className='text-center'>{button}</Text>
-                                </Button>
-                            </View>
-                        ))}
-                    </View>
-                ))}
-            </View>
         </View>
     );
 
