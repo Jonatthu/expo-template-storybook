@@ -24,14 +24,14 @@ export default function App() {
             {/* This class 9xl is broken for example */}
             <Text className='text-8xl'>Hello</Text>
             <Text className='text-9xl'>Hello</Text>
-            <View className="flex-1 bg-green-100 p-2">
+            <View className="flex-1 p-2">
                 <View className="flex-1 mb-4 gap-2">
                     {DecimalsButtons.map((row, index) => (
                         <View className="flex-1 flex-row gap-2" key={index}>
                             {row.map((button) => (
                                 <Button
                                     key={button}
-                                    className="h-16 flex-1 items-center justify-center"
+                                    className="h-16 flex-1 items-center justify-center bg-green-100"
                                 >
                                     <Text>{button}</Text>
                                 </Button>
