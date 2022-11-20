@@ -9,11 +9,11 @@ const Text = styled(RNText);
 
 
 const DecimalsButtons = [
-    ['1', '2', '3'],
-    ['4', '5', '6'],
-    ['7', '8', '9'],
-    ['.', '0', 'Del'],
+    ['1', '4', '7', '0'],
+    ['2', '5', '8', '.'],
+    ['3', '6', '9', 'Del'],
 ];
+
 
 export default function App() {
     return (
@@ -24,14 +24,15 @@ export default function App() {
             {/* This class 9xl is broken for example */}
             <Text className='text-8xl'>Hello</Text>
             <Text className='text-9xl'>Hello</Text>
-            <View className="flex-1 p-2">
-                <View className="flex-1 mb-4 gap-2">
+
+            <View className="p-2">
+                <View className="mb-4 flex-row">
                     {DecimalsButtons.map((row, index) => (
-                        <View className="flex-1 flex-row gap-2" key={index}>
+                        <View className="flex-1 bg-slate-300 gap-2" key={index}>
                             {row.map((button) => (
                                 <Button
                                     key={button}
-                                    className="h-16 flex-1 items-center justify-center bg-green-100"
+                                    className="h-16 items-center justify-center bg-green-100"
                                 >
                                     <Text>{button}</Text>
                                 </Button>
